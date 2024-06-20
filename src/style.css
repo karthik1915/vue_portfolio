@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "telegraf";
+  src: url("./assets/PPTelegraf-Regular.otf");
+}
+@font-face {
+  font-family: "goodtimes";
+  src: url("./assets/good times rg.otf");
+}
+@font-face {
+  font-family: "raleway";
+  src: url("./assets/Raleway-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "varelaround";
+  src: url("./assets/VarelaRound-Regular.ttf");
+}
+
+body {
+  @apply bg-secondary text-notblack;
+}
+
+.half-width {
+  width: 768px;
+}
