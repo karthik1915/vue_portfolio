@@ -10,9 +10,6 @@
       <dt class="text-2xl font-goodtimes">64</dt>
       <dd class="font-semibold text-2xl font-telegraf">Projects Done</dd>
     </dl>
-    <div class="hidden">
-      <CircularText />
-    </div>
     <dl class="p-5 text-center sm:text-left">
       <dt class="text-2xl font-semibold font-telegraf">Contact</dt>
       <dd class="font-varelaround font-semibold text-lg">
@@ -30,6 +27,4 @@
 }
 </style>
 
-<script setup lang="ts">
-import CircularText from "./CircularText.vue";
-</script>
+<script setup lang="ts"></script>
