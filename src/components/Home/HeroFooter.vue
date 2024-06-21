@@ -1,6 +1,7 @@
 <template>
-  <div class="row-span-1 p-10 bg-notblack">
+  <div id="hero-footer" class="row-span-1 p-10 bg-notblack">
     <section
+      id="hero-footer-content"
       class="max-w-[768px] mx-auto grid grid-rows-[0.5fr_1fr] text-background items-center"
     >
       <div>
@@ -40,4 +41,24 @@
 
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
+import gsap from "gsap";
+import { onMounted } from "vue";
+
+onMounted(() => {
+  gsap.fromTo(
+    "#hero-footer",
+    {
+      opacity: 0,
+      x: -200,
+    },
+    {
+      x: 0,
+      delay: 0.3,
+      duration: 1,
+      opacity: 1,
+      y: 0,
+      ease: "power3.out",
+    }
+  );
+});
 </script>

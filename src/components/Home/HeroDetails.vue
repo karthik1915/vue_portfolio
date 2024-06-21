@@ -1,5 +1,6 @@
 <template>
   <div
+    id="hero-details"
     class="grid grid-rows-2 grid-cols-1 sm:grid-cols-2 sm:grid-flow-col mt-3"
   >
     <dl class="p-5 text-center sm:text-left">
@@ -27,4 +28,25 @@
 }
 </style>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import gsap from "gsap";
+import { onMounted } from "vue";
+
+onMounted(() => {
+  gsap.fromTo(
+    "#hero-details > dl",
+    {
+      opacity: 0,
+      y: 30,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.2,
+      duration: 1,
+      delay: 0.3,
+      ease: "back.out(1.7)",
+    }
+  );
+});
+</script>
