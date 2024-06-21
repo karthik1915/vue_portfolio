@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits } from "vue";
+import { defineProps, defineEmits } from "vue";
 
 const props = defineProps({
   src: {
@@ -26,5 +26,6 @@ const emits = defineEmits(["click"]);
 
 function handleClick() {
   emits("click");
+  props.onClick();
 }
 </script>
