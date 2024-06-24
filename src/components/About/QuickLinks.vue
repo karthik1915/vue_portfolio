@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import QuickButton from "./components/QuickButton.vue";
 
-function handleButtonClick() {
-  console.log("Button clicked!");
+function handleButtonClick(hash: string) {
+  const targetElement = document.querySelector(hash) as HTMLElement | null;
+  if (targetElement) {
+    window.scrollTo({ top: targetElement.offsetTop, behavior: "smooth" });
+  }
 }
 </script>
 
@@ -11,17 +14,17 @@ function handleButtonClick() {
     <QuickButton
       src="/assets/who.svg"
       alt="person_who"
-      @click="handleButtonClick"
+      @click="handleButtonClick('#who-am-i')"
     />
     <QuickButton
       src="/assets/what.svg"
       alt="person_what"
-      @click="handleButtonClick"
+      @click="handleButtonClick('#what-i-do')"
     />
     <QuickButton
       src="/assets/education.svg"
       alt="education"
-      @click="handleButtonClick"
+      @click="handleButtonClick('#education')"
     />
   </div>
   <div class="md:flex flex-col w-[320px] px-3 mt-3 hidden">

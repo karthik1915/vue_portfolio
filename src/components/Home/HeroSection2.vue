@@ -51,6 +51,9 @@ onMounted(() => {
       x: 2000,
       delay: 0.3,
       duration: 1,
+      onComplete: () => {
+        gsap.set("#hero-image-overlay-1", { opacity: 0 });
+      },
     }
   );
   gsap.fromTo(
@@ -63,6 +66,9 @@ onMounted(() => {
       x: 1900,
       delay: 0.6,
       duration: 1,
+      onComplete: () => {
+        gsap.set("#hero-image-overlay-2", { opacity: 0 });
+      },
     }
   );
   gsap.fromTo(
@@ -75,6 +81,9 @@ onMounted(() => {
       x: 2000,
       delay: 0.8,
       duration: 1,
+      onComplete: () => {
+        gsap.set("#hero-image-overlay-3", { opacity: 0 });
+      },
     }
   );
   gsap.fromTo(
@@ -82,12 +91,23 @@ onMounted(() => {
     {
       x: 0,
     },
-    { opacity: 0, x: 1900, delay: 1.2, duration: 1 }
+    {
+      opacity: 0,
+      x: 1900,
+      delay: 1.2,
+      duration: 1,
+      onComplete: () => {
+        gsap.set("#hero-image-overlay-4", { opacity: 0 });
+      },
+    }
   );
 
   gsap.fromTo(
     "#hero-image",
-    { scale: 1.3, opacity: 0 },
+    {
+      scale: 1.3,
+      opacity: 0,
+    },
     { scale: 1, opacity: 1, duration: 1.2, delay: 0.4, ease: "power3.out" }
   );
 });

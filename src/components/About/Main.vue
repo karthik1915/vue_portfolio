@@ -28,11 +28,10 @@
           projects from web applications to mobile applications. I am proficient
           in the following technologies:
         </p>
-        <div class="flex flex-wrap justify-center py-4">
+        <div id="skills" class="flex flex-wrap justify-center py-4">
           <article>Python</article>
           <article>C/C++</article>
           <article>Java</article>
-          <article>Python</article>
           <article>React</article>
           <article>Next Js</article>
           <article>Django</article>
