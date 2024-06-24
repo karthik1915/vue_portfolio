@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="z-30">
     <img
       alt="karthikeyan j"
       src="../../assets/karthikeyan.png"

@@ -20,7 +20,7 @@
           id="intro"
           class="font-varelaround py-5 text-center sm:w-3/4 sm:text-left mx-auto sm:mx-0"
         >
-          Developing Robust Webapplication out of React, Next, Django out of 2
+          Developing Robust Webapplication with React, Next, Django out of 2
           Years of Experience
         </p>
         <HeroButtons />

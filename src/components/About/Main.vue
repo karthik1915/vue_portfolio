@@ -1,14 +1,17 @@
 <template>
-  <header class="text-center text-4xl font-telegraf my-6">About Me</header>
+  <header id="heading" class="text-center text-4xl font-telegraf my-6">
+    About Me
+  </header>
   <div class="grid md:grid-cols-[0.6fr_1fr] mx-auto max-w-screen-2xl">
     <div
       id="hero-image-about"
       class="flex items-center justify-center md:justify-start md:flex-col mb-8"
     >
       <HeroImage />
-      <QuickLinks />
+      <QuickButtons />
+      <QuickLink />
     </div>
-    <div class="px-4 space-y-3">
+    <div class="px-4 space-y-3" id="about-me">
       <section id="who-am-i">
         <h2>Who Am I ?</h2>
         <p>
@@ -28,20 +31,7 @@
           projects from web applications to mobile applications. I am proficient
           in the following technologies:
         </p>
-        <div id="skills" class="flex flex-wrap justify-center py-4">
-          <article>Python</article>
-          <article>C/C++</article>
-          <article>Java</article>
-          <article>React</article>
-          <article>Next Js</article>
-          <article>Django</article>
-          <article>Docker</article>
-          <article>Vue</article>
-          <article>Tailwindcss</article>
-          <article>MongoDB</article>
-          <article>Git</article>
-          <article>Flutter</article>
-        </div>
+        <Skills />
       </section>
       <section id="education">
         <h2>Education</h2>
@@ -62,8 +52,24 @@
 <script setup lang="ts">
 import HeroImage from "./HeroImage.vue";
 import Education from "./Education.vue";
-import QuickLinks from "./QuickLinks.vue";
+import QuickButtons from "./QuickButtons.vue";
 import Footer from "./Footer.vue";
+import QuickLink from "./components/QuickLink.vue";
+import Skills from "./components/Skills.vue";
+import gsap from "gsap";
+import { onMounted } from "vue";
+onMounted(() => {
+  gsap.fromTo(
+    "#about-me h2",
+    { x: 50, opacity: 0 },
+    { x: 0, opacity: 1, duration: 0.8 }
+  );
+  gsap.fromTo(
+    "#about-me p",
+    { y: 50, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.8 }
+  );
+});
 </script>
 
 <style scoped>
@@ -72,8 +78,5 @@ h2 {
 }
 p {
   @apply font-varelaround text-lg text-notblack;
-}
-article {
-  @apply inline py-1 px-4 mx-4 my-1 lg:my-2 shadow-sm hover:shadow-lg cursor-pointer bg-gradient-to-r to-[#FAAB78] via-50% via-[#FFDCA9] from-[#FAAB78] rounded-xl;
 }
 </style>

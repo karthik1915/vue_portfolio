@@ -1,6 +1,20 @@
 <script setup lang="ts">
 import QuickButton from "./components/QuickButton.vue";
+import gsap from "gsap";
+import { onMounted } from "vue";
 
+// Use onMounted to ensure QuickButtons array is populated after component mount
+onMounted(() => {
+  const QuickButtons = gsap.utils.toArray("#quick-buttons > div");
+
+  gsap.fromTo(
+    QuickButtons,
+    { x: -100 },
+    { x: 0, duration: 1, ease: "power3.out", stagger: 0.3 }
+  );
+});
+
+// Function to handle button click and smooth scroll
 function handleButtonClick(hash: string) {
   const targetElement = document.querySelector(hash) as HTMLElement | null;
   if (targetElement) {
@@ -10,7 +24,7 @@ function handleButtonClick(hash: string) {
 </script>
 
 <template>
-  <div class="md:hidden flex flex-col">
+  <div class="md:hidden flex flex-col" id="quick-buttons">
     <QuickButton
       src="/assets/who.svg"
       alt="person_who"
@@ -26,16 +40,5 @@ function handleButtonClick(hash: string) {
       alt="education"
       @click="handleButtonClick('#education')"
     />
-  </div>
-  <div class="md:flex flex-col w-[320px] px-3 mt-3 hidden">
-    <a href="#who-am-i" class="text-xl font-telegraf flex gap-2 items-start"
-      ><img src="/assets/who.svg" />who am i</a
-    >
-    <a href="#what-i-do" class="text-xl font-telegraf flex gap-2 items-start"
-      ><img src="/assets/what.svg" />what i do</a
-    >
-    <a href="#education" class="text-xl font-telegraf flex gap-2 items-start"
-      ><img src="/assets/education.svg" />education</a
-    >
   </div>
 </template>

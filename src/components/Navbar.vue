@@ -28,7 +28,7 @@
         class="px-6 py-2 ring-1 ring-primary hover:bg-primary hover:text-notblack rounded-xl font-varelaround text-md"
         href="#"
       >
-        Contact
+        Talk with Me
       </button>
     </div>
     <div class="md:hidden block">
@@ -65,7 +65,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref } from "vue";
+import { ref } from "vue";
 import Logo from "./Logo.vue";
 import { RouterLink } from "vue-router";
 import gsap from "gsap";
